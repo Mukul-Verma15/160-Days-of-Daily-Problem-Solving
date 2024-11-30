@@ -1,0 +1,13 @@
+bool areAnagrams(string& s1, string& s2) {
+        // Your code here
+     if (s1.length() != s2.length()) {
+        return false;
+    }
+    
+    // Sort both strings
+    sort(s1.begin(), s1.end());
+    sort(s2.begin(), s2.end());
+    
+    // Compare the sorted strings
+    return s1 == s2;
+    }
