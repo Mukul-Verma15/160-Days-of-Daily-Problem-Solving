@@ -1,0 +1,15 @@
+int res = 0;
+
+    // Pick a starting point of the subarray
+    for (int s = 0; s < arr.size(); s++) {       
+        int sum = 0; 
+      
+        // Pick an ending point
+        for (int e = s; e < arr.size(); e++) {
+            sum += arr[e];
+            if (sum == k)
+                res++;
+        }
+    }
+
+    return res;
