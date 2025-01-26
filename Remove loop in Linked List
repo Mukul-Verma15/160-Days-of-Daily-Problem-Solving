@@ -1,0 +1,26 @@
+  // code here
+        Node *slow=head, *fast=head;
+        while(fast!=nullptr && fast->next!=nullptr){
+            slow=slow->next;
+            fast=fast->next->next;
+            if(fast==slow) break;
+        }
+        slow=head;
+        if(fast==head && fast!=nullptr && fast->next!=nullptr){
+            //cout<<slow->data<<" "<<fast->data<<endl;
+            while(slow->next!=fast){
+                slow=slow->next;
+            }
+            //cout<<slow->data<<" "<<fast->data<<endl;
+            slow->next=nullptr;
+        }else if(fast!=nullptr && fast->next!=nullptr){
+            Node *prev=nullptr;
+            //cout<<slow->data<<" "<<fast->data<<endl;
+            while(slow!=fast){
+                prev=fast;
+                slow=slow->next;
+                fast=fast->next;
+            }
+            //cout<<slow->data<<" "<<fast->data;
+            prev->next=nullptr;
+        
