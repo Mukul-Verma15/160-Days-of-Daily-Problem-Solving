@@ -1,0 +1,19 @@
+ priority_queue<pair<int,Node*>,vector<pair<int,Node*>>,
+        greater<pair<int,Node*>>>pq;
+        
+        for(Node* node:arr){
+            while(node){
+                pq.push({node->data,node});
+                node=node->next;
+            }
+        }
+        
+        Node* ans=new Node(-1);
+        Node* dummy=ans;
+        while(!pq.empty()){
+            dummy->next=pq.top().second;
+            dummy=dummy->next;
+            pq.pop();
+        }
+        
+        return ans->next;
